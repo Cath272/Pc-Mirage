@@ -1,0 +1,102 @@
+html{
+    font-size: 18px;
+}
+
+#grid-pagina{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "banner1 banner1 banner1 banner1"
+                        " banner1 banner1 banner1 banner1"
+                        "anunturi produse produse orar"
+                        "banner2 banner2 Utile Utile "
+                        "banner3 banner3 Utile Utile "
+                        "oferte oferte oferte oferte";
+    grid-gap: 1em;
+}
+
+#grid-pagina>*{
+    outline: 2px solid var(--culoare-primary);
+    padding: 1em;
+}
+
+#grid-pagina>figure{
+    margin:0;
+}
+#welcome{
+    grid-area: anunturi;
+}
+#oferte{
+    grid-area: oferte;
+}
+#Utile{
+    grid-area: Utile;
+}
+#orar{
+    grid-area: orar;
+}
+ 
+#banner1{
+    grid-area: banner1;
+    display: flex;
+    justify-content: center;
+}
+#banner2{
+    grid-area: banner2;
+    display: flex;
+    justify-content: center;
+}
+#banner3{
+    grid-area: banner3;
+    display: flex;
+    justify-content: center;
+}
+#produse{
+    grid-area: produse;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 1200px){
+    html{
+        font-size: 15px;
+    }
+    #grid-pagina{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "banner1 banner1 "
+                            " anunturi orar  "
+                            "banner2 banner3"
+                            " produse produse  "
+                            " Utile Utile  "
+                            " oferte oferte  ";
+    grid-gap: 0.75em;
+    }
+    
+
+    
+}
+
+.intro-oferte{
+    font-size:1.5rem;
+}
+
+@media screen and (max-width: 800px){
+    html{
+        font-size: 12px;
+    }
+    #grid-pagina{
+        display: block;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-areas: "banner1  "
+                            " anunturi   "
+                            "orar "
+                            " banner2   "
+                            " banner3   "
+                            " produse   "
+                            "Utile"
+                            "oferte  ";
+        grid-gap: 0.50em;
+    }
+
+    
+}
