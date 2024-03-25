@@ -13,14 +13,31 @@ nav {
 }
 
 .meniu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 .meniu li {
-  border: 1px solid var(--culoare-primary);
   width: var(--latime-buton);
   height: var(--inaltime-meniu);
   text-align: center;
+}
+.meniu li:hover > div, .meniu li:hover > a {
+  background-color: var(--culoare-primary);
+  color: var(--culoare-text-selectat);
+  border: 1px solid var(--culoare3);
+}
+.meniu li:hover > ul {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  -webkit-animation: animatie_submeniu 1s linear 1 forwards;
+          animation: animatie_submeniu 1s linear 1 forwards;
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 .meniu li div, .meniu li a {
   display: block;
@@ -30,25 +47,14 @@ nav {
   line-height: var(--inaltime-meniu);
   color: white;
   text-decoration: none;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .meniu ul {
   display: none;
   opacity: 0;
-  transform: scaleY(0);
-}
-
-.meniu li:hover > div, .meniu li:hover > a {
-  background-color: var(--culoare-primary);
-  color: var(--culoare-text-selectat);
-}
-
-.meniu li:hover > ul {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  animation: animatie_submeniu 1s linear 1 forwards;
-  transform-origin: center top;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .meniu, .meniu ul {
@@ -58,11 +64,18 @@ nav {
   background-color: var(--culoare3);
 }
 
-@keyframes animatie_submeniu {
+@-webkit-keyframes animatie_submeniu {
   100% {
     opacity: 1;
-    transform: scaleY(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
-/*# sourceMappingURL=nav.css.map */
+@keyframes animatie_submeniu {
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
