@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #hamburger, #ch-menu {
   display: none;
 }
@@ -41,6 +42,7 @@ nav {
 }
 .meniu li div, .meniu li a {
   display: block;
+  position: relative;
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -49,6 +51,28 @@ nav {
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.meniu li div:hover::before, .meniu li a:hover::before {
+  opacity: 1; /* Bara devine opacă */
+  -webkit-transform: translateY(0);
+          transform: translateY(0); /* Se ridică la marginea de jos a butonului */
+}
+.meniu li div::before, .meniu li a::before {
+  content: ""; /* Elementul pseudoelementului */
+  position: absolute;
+  bottom: 0; /* Poziționarea la partea de jos a butonului */
+  left: 0;
+  width: 100%; /* Lățimea egală cu a butonului */
+  height: 5px; /* Înălțimea barei */
+  background: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(white), to(black));
+  background: linear-gradient(to top, black, white, black); /* Gradientul culorilor */
+  opacity: 0; /* Inițial transparent */
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s; /* Tranzitie pentru opacitate și transformare */
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px); /* Se va afla inițial sub buton */
 }
 .meniu ul {
   display: none;

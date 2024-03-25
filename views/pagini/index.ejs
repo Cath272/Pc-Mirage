@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+<!--
+    Comentariu
+-->
+<html lang="ro">
+    <head>
+        
+        
+        <%- include("../fragmente/head.ejs") %>
+
+        <title>PC Mirage</title>
+        <meta name ="keywords" content="Calculator, procesor, placa video, memorie, ssd, consultanta, asambare pc, Bucuresti, asus, dell, amd, intel, nvidia">
+        <meta name="description" content="Magazin de calculatoare, componente pc, perferice, retelistica. Consultanta in domeniul calculatoarelor, servicii de asamblare pc. Livrăm oriunde in țară">
+    </head>
+
+    <body>
+        <%- include("../fragmente/header.ejs") %>
+        <main>
+            <div id="grid-pagina">
+                <section id = "welcome">
+                    <h2>Bine ati venit</h2>
+                    <p>
+                        <span class="fas fa-regular fa-house"></span>Bine ati venit benit la pagina magazinului <b>Pc Mirage</b>, un magazin de calculatoare, componente pc, laptop-uri si monitoare cu o gama foarte variata si preturi foarte bune
+                    </p>
+                </section>
+
+                <section id="banner1">
+                    <img src="./resurse/imagini/banner.png" alt="laptop" id="tech">
+                </section>
+
+                <section id="banner2">
+                    <img src="./resurse/imagini/mare_fan.jpg" alt="laptop" id="tech" >
+                </section>
+
+                <section id="banner3">
+                    <img src="./resurse/imagini/amd.jpg" alt="laptop" id="tech">
+                </section>
+
+                <section id = "orar">
+                    <h2>Program</h2>
+                    <div class="scrollbar">
+                        <table>
+                            <thead>
+                              <tr>
+                                <th scope="row">Zi</th>
+                                <th>Ora <br> Deschidere</th>
+                                <th>Ora <br>Inchidere</th>
+                                <th>Ridicare produse <br> online</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">Luni-Vineri</th>
+                                <td>10</td>
+                                <td>8</td>
+                                <td>DA</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Sambata</th>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>NU</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">Duminica</th>
+                                <td colspan="3">Inchis</td>
+                              </tr>
+                              
+                            </tbody>
+                            <tfoot>
+                                <caption>Magazinul este inchis in zilele considerate sarbatori legale</caption>
+                            </tfoot>
+                           </table>
+                    </div>
+                    
+        
+                 
+                </section>
+    
+                <section id="oferte">
+                    <h2>Oferte</h2>
+                    <p>Oferte incredibile de:</p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                          <mo></mo>
+                          <mtable>
+                            <mtr>
+                                <mtd><msqrt><mi>a%</mi></msqrt></mtd>
+                                <mtd><mn>7%</mn></mtd>
+                            </mtr>        
+                            <mtr>
+                                <mtd><msup><mi>b</mi><mn>5%</mn></msup></mtd>
+                                <mtd><mn>3.5%</mn></mtd>
+                            </mtr>        
+                          </mtable>
+                          <mo></mo>
+                        </mrow>
+                      </math>
+                   
+                    <section id ="Monitoare">
+                        <h3>Super promotie la monitoare</h3>
+                        <p>Monitoare pentru toate nevoile, de <i>gaming</i>, office sau chiar <strong>profesionale</strong> la preturi foarte bune.</p>
+                        
+                    </section>
+    
+                    <section id ="Laptopuri">
+                        <h3>Laptop-uri la un pret special</h3>
+                        <p>O gama variata de laptop-uri de la producatori de top, pentru toate buzunarele. </p>
+                        <img src="./resurse/imagini/laptop.avif" alt="laptop" id="tech" >
+                    </section>
+                </section>
+    
+                <section id ="produse">
+                    <h2>Recomandate</h2>
+                    <p>Produse recomandate de echipa PC Mirage </p>
+                    <figure>
+                        <picture>
+                            <source srcset ="./resurse/imagini/tech1.jpg" media ="(max-width:700px)">
+                            <img src="./resurse/imagini/tech1.jpg" alt="chip-uri" title="placa video" id="tech">
+                        </picture>
+                        <figcaption>Placa de baza</figcaption>
+                    </figure>
+    
+                    
+                    
+                </section>
+    
+                <section id ="Utile">
+                    <h2>Utile</h2>
+                    <p>Cum sa construiesti un calculator </p>
+                    
+                    <div class="container-iframe">
+                        <div class="taburi-iframe">
+                            <a href="https://www.youtube.com/embed/BL4DCEp7blY?si=1q8hfkKLPAtY58gg" target="ifr-video" class="button" style="text-decoration:none">How to build a pc</a>
+                            <a href="https://www.youtube.com/embed/WpnLehvOM6E?si=9mEnSR-ct9ghQMpq" target="ifr-video" class="button" style="text-decoration:none">How to set up a pc</a>
+                            <a href="https://google.com" target="ifr-video" class="button" style="text-decoration:none">Placeholder</a>
+                            
+                        </div>
+                        <div class="video">
+                            <iframe width="560" height="315"  id="ifr-video1" src="https://www.youtube.com/embed/BL4DCEp7blY?si=1q8hfkKLPAtY58gg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    <h4>Manual Placa de baza B450 Gaming X:</h4>
+                    <a class="dl_button" href ="./resurse/fisiere/mb_manual_b450-gaming-x_e_1102_v1.pdf" download style="text-decoration:none">DOWNLOAD</a>
+                    <section id="index-intrebari">
+                        <h2>Întrebări frecvente</h2>
+                        <details><summary>Produsele dispun de garantie?</summary>
+                            <p>Da!</p>
+                        </details>
+                        <details><summary>Produsele sunt noi?</summary>
+                            <p>Da!</p>
+                        </details>
+                        <details><summary>Cat costa livrarea?</summary>
+                            <p>9.99 RON in Bucuresti si 14.99RON in restul tarii</p>
+                        </details>
+                        
+                        
+    
+                    </section>
+                </section>
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer.ejs") %>
+
+    </body>
+</html>

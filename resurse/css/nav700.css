@@ -70,6 +70,10 @@ nav ul.meniu>li li a:before{
 
 }
 
+.meniu li div:hover::before, .meniu li a:hover::before{
+    opacity: 0;
+}
+
 @keyframes aparitie_meniu_p{
     0%{
         opacity:0;

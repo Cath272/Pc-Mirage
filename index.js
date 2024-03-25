@@ -14,3 +14,30 @@ console.log("Director de lucru", process.cwd());
 app.set("view engine","ejs");
 
 app.use("/resurse", express.static(__dirname+"/resurse"));
+
+
+
+app.get(["/", "/home", "/index"], function(req, res){
+    res.render("pagini/index");
+})
+
+
+
+
+app.get("/*", function(req, res){
+    res.render("pagini/" + req.url, function(rezHtml, err){
+        console.log(rezHtml);
+        console.log("eroare", err);
+        res.send(rezHtml);
+    })
+})
+
+
+
+
+
+
+
+app.listen(8080);
+
+console.log("a plecat serveru");
