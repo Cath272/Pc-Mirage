@@ -1,111 +1,175 @@
-@media print{
-    #tech{
-        display: none;
-    }
-
-    .container-iframe{
-        display: none;
-    }
-
-    #link-top{
-        display: none;
-    }
-
-    #absolut{
-		position: absolute;
-		display: inline-block;
-		top:100%;
-		width:20px;
-		height:20px;
-		right:0;
-		overflow: visible;
+@media print {
+	#tech {
+		display: none;
 	}
-	#absolut::after{
-		content:"Element poziționat absolut pe a doua pagină.Pentru a vedea stilul de printare apăsați Ctrl+P.";
-		position: absolute;
-		font-size:10px;
-		right:0;
-		border:5px double black;
-		width:200px;
-		height:35px;
-		display: inline-block;
+
+	.container-iframe {
+		display: none;
+	}
+
+	#link-top {
+		display: none;
+	}
+
+	#maps {
+		display: none;
+	}
+
+	#contact {
+		display: none;
 	}
 
 	h1{
-		page-break-after: always;
-		margin-top: 50%;
-		text-align:center;
-		margin-left:1cm;
+		margin-top: 10%;
 	}
-  #grid-pag{
+	#absolut {
+		position: absolute;
+		display: inline-block;
+		top: 100%;
+		width: 20px;
+		height: 20px;
+		right: 0;
+		overflow: visible;
+	}
+
+	#absolut::after {
+		content: "Element poziționat absolut pe a doua pagină.Pentru a vedea stilul de printare apăsați Ctrl+P.";
+		position: absolute;
 		font-size: 10px;
-		box-sizing:border-box;
-		page-break-before:always;
+		right: 0;
+		border: 5px double black;
+		width: 200px;
+		height: 35px;
+		display: inline-block;
+	}
+
+	.meniu {
+		display: flex;
+		flex-direction: column;
+		row-gap: 15px;
+		page-break-after: always;
+		
+		margin-top: 50%;
+		
+		margin-left: 1cm;
+	}
+	
+
+	html {
+		font-size: 20px;
+	}
+
+	main {
+		page-break-after: always;
+
+	}
+
+
+	#grid-pagina>* {
+		outline: 0px;
+	}
+
+	#grid-pagina {
+		display: block;
+		box-sizing: border-box;
+		page-break-before: always;
 		background-color: white;
 		/*
 			grid-template-rows: calc(100vh - 10px) 100vh 100vh 100vh;*/
 
-		display:block;
-		}
-		html, body {
-        width: 210mm;
-        /* height: 297mm; */
-        /*height: 282mm;*/
-				overflow:visible !important;
-		}
+		display: block;
+	}
+
+	html,
+	body {
+		width: 210mm;
+		/* height: 297mm; */
+		/*height: 282mm;*/
+		overflow: visible !important;
+	}
 
 	/*#lst li{
 		page-break-before: always;
 	}*/
-	
-	#grid-pag div:nth-child(5){
-		
-		page-break-before:always;
+
+	#grid-pagina div:nth-child(5) {
+
+		page-break-before: always;
 	}
 
-	
-		#watermark
-		{
-			display: block;
-			position: fixed;/*apare pe toate paginile*/
-			bottom:0;
-			color:rgba(0,0,0,0.4);
-			right:0;
-		}
-		#watermark::after{
-			
-			opacity:0.4;
-			padding:5px;
-			display: block;
-			background: white;
-			border:2px solid black;
-			border-top-left-radius:10px;
-			border-bottom-left-radius:10px;
-			border-right:none;
-			content:"Copyright Balan Liviu";
-		}
+	#oferte {
 
-	#end{
+		page-break-after: always;
+	}
+
+	#banner_proiect {
+		display: block;
+		position: absolute;
+		/*apare pe toate paginile*/
+		width: 50%;
+		top: 0;
+		right: 0;
+		color: rgba(0, 0, 0, 0.4);
+	}
+
+	#banner_proiect::after {
+
+		opacity: 1;
+		display: block;
+
+		background: white;
+		border: 2px double black;
+		border-radius: 10px;
+		content: "Acesta este un proiect scolar";
+		text-align: center;
+	}
+
+	#watermark {
+		display: block;
+		position: fixed;
+		/*apare pe toate paginile*/
+		height: 10%;
+		width: 60%;
+		right: 15%;
+		bottom: 0;
+		color: rgba(0, 0, 0, 0.4);
+	}
+
+	#watermark::after {
+
+		opacity: 0.3;
+		display: block;
+
+		background: white;
+		border: 2px solid black;
+		border-radius: 10px;
+		content: "Copyright Balan Liviu";
+		text-align: center;
+	}
+
+	#end {
 		page-break-before: always;
 	}
 }
 
 
-	@page {
-		size: A4 portrait;
-		margin-bottom:2cm;
-		margin-top:2cm;
-		counter-increment: page;
-			
-	}
-	@page:left{
+@page {
+	size: A4 portrait;
+	margin-bottom: 2cm;
+	margin-top: 2cm;
+	counter-increment: page;
 
-		margin-left:2cm;
-		margin-right:1cm;
-		border-radius: 20cm;
-	}
-	@page:right{
+}
 
-		margin-right:2cm;
-		margin-left:1cm;
-	}
+@page: left {
+
+	margin-left: 2cm;
+	margin-right: 1cm;
+	border-radius: 20cm;
+}
+
+@page: right {
+
+	margin-right: 2cm;
+	margin-left: 1cm;
+}

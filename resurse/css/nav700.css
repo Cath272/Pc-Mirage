@@ -2,6 +2,7 @@
 
 #hamburger{
     display:block;
+    background-color: var(--culoare-primary);
 }
 
 #hamburger>img{
@@ -43,6 +44,8 @@ nav ul.meniu li{
     width:100%;
 }
 
+
+
 /*meniul sa vina deasupra continutul de mai jos, fara sa impinga continutul*/
 nav ul.meniu>li ul{
     position:absolute;
@@ -76,11 +79,10 @@ nav ul.meniu>li li a:before{
 
 @keyframes aparitie_meniu_p{
     0%{
-        opacity:0;
-        
+        clip-path: circle(0%);
     } 
 	100%{
-    	opacity:1;
+    	clip-path: circle(100%);
     }
 }
 
