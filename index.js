@@ -25,10 +25,10 @@ app.get(["/", "/home", "/index"], function(req, res){
 
 
 app.get("/*", function(req, res){
-    res.render("pagini/" + req.url, function(rezHtml, err){
+    res.render("pagini/" + req.url, function(err, rezHtml){
         console.log(rezHtml);
-        console.log("eroare", err);
-        res.send(rezHtml);
+        console.log("eroare" + err);
+        res.send(rezHtml+ "");
     })
 })
 
