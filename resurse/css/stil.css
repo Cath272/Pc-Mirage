@@ -41,8 +41,19 @@ h1 {
   color: black;
 }
 
+a[href^=http] {
+  background-image: radial-gradient(var(--culoare5) 0%, var(--culoare5) 40%, transparent 80%, transparent 100%);
+  background-size: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: background-size 1s linear;
+  transition: background-size 1s linear;
+}
 a[href^=http]:visited {
   color: var(--culoare5);
+}
+a[href^=http]:hover {
+  background-size: 100%;
 }
 a[href^=http]:hover::before {
   color: #f2f2f2;
