@@ -10,7 +10,7 @@ obGlobal ={
 }
 
 
-vest_foldere = ["temp", "temp1"]
+vect_foldere = ["temp", "temp1"]
 for(let folder of vect_foldere){
     let caleFolder = path.join(__dirname, folder)
     if(!fs.existsSync(caleFolder)){
@@ -38,13 +38,6 @@ app.get(["/", "/home", "/index"], function(req, res){
 
 
 app.get("/*", function(req, res){
-<<<<<<< Updated upstream
-    res.render("pagini/" + req.url, function(err, rezHtml){
-        console.log(rezHtml);
-        console.log("eroare" + err);
-        res.send(rezHtml+ "");
-    })
-=======
     //console.log(req.url)
     try {
         res.render("pagini"+req.url, function(err, rezHtml){
@@ -85,7 +78,6 @@ app.get("/*.ejs", function(req, res) {
 
 app.get("/favicon.ico", function(req, res) {
     res.sendFile(path.join(__dirname, "resurse/favicon/favicon.ico"));
->>>>>>> Stashed changes
 })
 
 

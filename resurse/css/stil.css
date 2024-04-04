@@ -1,117 +1,153 @@
-body{
-    font-family: "Roboto", sans-serif;
+@charset "UTF-8";
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-
-
-
-
-
-
-p{
-    background-color: var(--culoare-primary);
-    color:white;
-    
+p {
+  background-color: var(--culoare-primary);
+  color: white;
 }
 
-h1{
-    color: var(--culoare-primary);
-    border: 5px solid var(--culoare-primary);
-    
+h1 {
+  color: var(--culoare-primary);
+  border: 5px solid var(--culoare-primary);
 }
 
-#tech{
-    width: 70%;
-    height: auto;
-    
-    border: 5px solid var(--culoare-primary);
+#tech {
+  width: 70%;
+  height: auto;
+  border: 5px solid var(--culoare-primary);
 }
 
-.container-iframe{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    
-    
-    
-}
-.taburi-iframe{
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
-}
-
-.video{
-    display: flex;
-    justify-content: center;
-    
+.container-iframe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.scrollbar{
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+.video-vtt {
+  width: 100%;
+  height: auto;
+}
+.video-vtt::cue {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: black;
 }
 
-#ifr-video1{
-    border: 5px solid var(--culoare3);
+a[href^=http]:visited {
+  color: var(--culoare5);
+}
+a[href^=http]:hover::before {
+  color: #f2f2f2;
+}
+a[href^=http]::before {
+  content: "⮳";
+  font-size: 2rem;
+}
+a[href^=http]:active {
+  border: solid 1px black;
 }
 
-th{
-    background-color: var(--culoare3);
-     color: white;
+video::cue(b) {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
-td{
-    text-align: center;
+.taburi-iframe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
 }
 
-caption{
-    text-align: center;
-    caption-side: bottom;
+.video {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.scrollbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+#ifr-video1 {
+  border: 5px solid var(--culoare3);
+}
+
+th {
+  background-color: var(--culoare3);
+  color: white;
+}
+
+td {
+  text-align: center;
+}
+
+caption {
+  text-align: center;
+  caption-side: bottom;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .button {
-    display: inline;
-    width: 150px;
-    height: 25px;
-    background: var(--culoare3);
-    padding: 10px;
-    text-align: center;
-    border-top-left-radius: .4rem;
-    border-top-right-radius: .4rem;
-    color: white;
-    font-weight: bold;
-    line-height: 25px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  display: inline;
+  width: 150px;
+  height: 25px;
+  background: var(--culoare3);
+  padding: 10px;
+  text-align: center;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+          box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
-.button:hover{
-    opacity:0.7;
+.button:hover {
+  opacity: 0.7;
 }
 
-.dl_button:hover{
-    opacity: 0.7;
+.dl_button:hover {
+  opacity: 0.7;
 }
 
-.dl_button{
-    display: inline;
-    width: 150px;
-    height: 25px;
-    background: var(--culoare3);
-    padding: 10px;
-    text-align: center;
-    border-radius: .4rem;
-    color: white;
-    font-weight: bold;
-    line-height: 25px;
+.dl_button {
+  display: inline;
+  width: 150px;
+  height: 25px;
+  background: var(--culoare3);
+  padding: 10px;
+  text-align: center;
+  border-radius: 0.4rem;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
 }
-
-
-
