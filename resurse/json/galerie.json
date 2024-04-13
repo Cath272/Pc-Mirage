@@ -1,0 +1,55 @@
+{
+    "cale_galerie": "resurse/imagini/galerie",
+    "imagini": [
+        {
+            "fisier": "pc1.jpg",
+            "nume_poza": "PC 1",
+            "continut_alternativ": "Calculator gaming 1",
+            "descriere_poza": "Caclulator gaming performant",
+            "intervale_zile": [[   "luni","miercuri"],["duminica", "duminica"]
+            ]
+        },
+        {
+            "fisier": "pc2.jpg",
+            "nume_poza": "PC 2",
+            "continut_alternativ": "Calculator gaming 2",
+            "descriere_poza": "Calculator gaming performant",
+            "intervale_zile": [[   "luni","vineri"],["sambata", "sambata"]
+            ]
+        },
+        {
+            "fisier": "pc3.jpg",
+            "nume_poza": "PC 3",
+            "continut_alternativ": "Calculator gaming 3",
+            "descriere_poza": "Caclulator gaming performant",
+            "intervale_zile": [[   "luni","miercuri"],["sambata", "sambata"]
+            ]
+        },
+        {
+            "fisier": "pc4.jpg",
+            "nume_poza": "PC 4",
+            "continut_alternativ": "Calculator gaming 4",
+            "descriere_poza": "Caclulator gaming performant",
+            "intervale_zile": [[   "luni","miercuri"],["sambata", "sambata"]
+            ]
+        },
+        {
+            "fisier": "pc5.jpg",
+            "nume_poza": "PC 5",
+            "continut_alternativ": "Calculator gaming 5",
+            "descriere_poza": "Caclulator gaming performant",
+            "intervale_zile": [[   "luni","vineri"],["sambata", "sambata"]
+            ]
+        },
+        {
+            "fisier": "pc6.jpg",
+            "nume_poza": "PC 6",
+            "continut_alternativ": "Calculator gaming 6",
+            "descriere_poza": "Caclulator gaming performant",
+            "intervale_zile": [[   "luni","miercuri"],["sambata", "sambata"]
+            ]
+        }
+
+
+    ]
+}
