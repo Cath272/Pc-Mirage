@@ -31,6 +31,7 @@ console.log("Director de lucru", process.cwd());
 app.set("view engine","ejs");
 
 app.use("/resurse", express.static(__dirname+"/resurse"));
+app.use("/node_modules", express.static(__dirname+"/node_modules"));
 
 
 

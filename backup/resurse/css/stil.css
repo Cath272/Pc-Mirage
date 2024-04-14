@@ -20,16 +20,9 @@ h1 {
 }
 
 .container-iframe {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .video-vtt {
@@ -46,7 +39,6 @@ a[href^=http] {
   background-size: 0;
   background-position: center;
   background-repeat: no-repeat;
-  -webkit-transition: background-size 1s linear;
   transition: background-size 1s linear;
 }
 a[href^=http]:visited {
@@ -67,38 +59,23 @@ a[href^=http]:active {
 }
 
 video::cue(b) {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .taburi-iframe {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
 .video {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .scrollbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -138,8 +115,7 @@ tr:nth-child(even) {
   color: white;
   font-weight: bold;
   line-height: 25px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-          box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .button:hover {

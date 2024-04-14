@@ -14,12 +14,8 @@ nav {
 }
 
 .meniu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 .meniu li {
   width: var(--latime-buton);
@@ -35,10 +31,8 @@ nav {
   display: block;
   position: absolute;
   z-index: 100;
-  -webkit-animation: animatie_submeniu 1s linear 1 forwards;
-          animation: animatie_submeniu 1s linear 1 forwards;
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  animation: animatie_submeniu 1s linear 1 forwards;
+  transform-origin: center;
 }
 .meniu li div, .meniu li a {
   display: block;
@@ -49,13 +43,11 @@ nav {
   line-height: var(--inaltime-meniu);
   color: white;
   text-decoration: none;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 .meniu li div:hover::before, .meniu li a:hover::before {
   opacity: 1; /* Bara devine opacă */
-  -webkit-transform: translateY(0);
-          transform: translateY(0); /* Se ridică la marginea de jos a butonului */
+  transform: translateY(0); /* Se ridică la marginea de jos a butonului */
 }
 .meniu li div::before, .meniu li a::before {
   content: ""; /* Elementul pseudoelementului */
@@ -64,21 +56,15 @@ nav {
   left: 0;
   width: 100%; /* Lățimea egală cu a butonului */
   height: 5px; /* Înălțimea barei */
-  background: -webkit-gradient(linear, left bottom, left top, from(black), color-stop(white), to(black));
   background: linear-gradient(to top, black, white, black); /* Gradientul culorilor */
   opacity: 0; /* Inițial transparent */
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s; /* Tranzitie pentru opacitate și transformare */
-  -webkit-transform: translateY(-50px);
-          transform: translateY(-50px); /* Se va afla inițial sub buton */
+  transition: opacity 0.3s, transform 0.3s; /* Tranzitie pentru opacitate și transformare */
+  transform: translateY(-50px); /* Se va afla inițial sub buton */
 }
 .meniu ul {
   display: none;
   opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
 }
 
 .meniu, .meniu ul {
@@ -88,18 +74,9 @@ nav {
   background-color: var(--culoare3);
 }
 
-@-webkit-keyframes animatie_submeniu {
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 @keyframes animatie_submeniu {
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }

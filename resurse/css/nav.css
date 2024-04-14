@@ -45,11 +45,11 @@ nav {
   text-decoration: none;
   box-sizing: border-box;
 }
-.meniu li div > :hover::before, .meniu li a > :hover::before {
+.meniu li div:hover::before, .meniu li a:hover::before {
   opacity: 1; /* Bara devine opacă */
   transform: translateY(0); /* Se ridică la marginea de jos a butonului */
 }
-.meniu li div > ::before, .meniu li a > ::before {
+.meniu li div::before, .meniu li a::before {
   content: ""; /* Elementul pseudoelementului */
   position: absolute;
   bottom: 0; /* Poziționarea la partea de jos a butonului */

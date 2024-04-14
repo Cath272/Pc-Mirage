@@ -19,7 +19,8 @@ html{
                         "anunturi produse produse orar"
                         "banner2 banner2 Utile Utile "
                         "banner3 banner3 Utile Utile "
-                        "oferte oferte oferte oferte";
+                        "oferte oferte oferte oferte"
+                        "galerie-statica galerie-statica galerie-statica galerie-statica";
     grid-gap: 1em;
 }
 
@@ -42,6 +43,10 @@ html{
 }
 #orar{
     grid-area: orar;
+}
+
+#galerie-statica{
+    grid-area: galerie-statica;
 }
  
 #banner1{
