@@ -3,7 +3,22 @@ const fs= require('fs');
 const path=require('path');
  const sharp=require('sharp');
 const sass=require('sass');
-// const ejs=require('ejs');
+const ejs=require('ejs');
+const Client =require('pg').Client;
+
+
+
+var client= new Client({database:"PcMirage",
+        user:"admin",
+        password:"admin",
+        host:"localhost",
+        port:5432});
+client.connect();
+
+client.query("select * from prajituri", function(err, rez){
+    console.log(rez);
+})
+
 
 obGlobal ={
     obErori:null,
@@ -13,6 +28,7 @@ obGlobal ={
     folderBackup:path.join(__dirname, "/backup")
 
 }
+
 
 
 vect_foldere = ["temp", "temp1", "backup"]
@@ -43,6 +59,32 @@ app.get(["/", "/home", "/index"], function(req, res){
 
 
 
+app.get(new RegExp("^\/[A-Za-z\/0-9]*\/$"), function(req, res){
+    afisareEroare(res,403);
+})
+
+app.get("/*.ejs", function(req, res) {
+    afisareEroare(res, 400);
+})
+
+app.get("/favicon.ico", function(req, res) {
+    res.sendFile(path.join(__dirname, "resurse/favicon/favicon.ico"));
+})
+
+
+app.get("/produse", function(req, res){
+    client.query("select * from componente", function(err, rez){
+        if(err){
+            console(err);
+            afisareEroare(res, 2);
+        }else{
+            res.render('pagini/produse', {produse:rez.rows, optiuni:[]})
+        }
+    });
+})
+
+// de faacut app.get produse/:Id
+
 app.get("/*", function(req, res){
     //console.log(req.url)
     try {
@@ -72,18 +114,6 @@ app.get("/*", function(req, res){
         }
     }
 
-})
-
-app.get(new RegExp("^\/[A-Za-z\/0-9]*\/$"), function(req, res){
-    afisareEroare(res,403);
-})
-
-app.get("/*.ejs", function(req, res) {
-    afisareEroare(res, 400);
-})
-
-app.get("/favicon.ico", function(req, res) {
-    res.sendFile(path.join(__dirname, "resurse/favicon/favicon.ico"));
 })
 
 
