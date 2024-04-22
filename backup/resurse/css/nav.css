@@ -80,3 +80,23 @@ nav {
     transform: scale(1);
   }
 }
+.icon::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+hr::before, hr::after {
+  font: var(--fa-font-regular);
+  content: "\f005";
+  position: absolute;
+  width: 20px; /* Lățimea și înălțimea steluțelor */
+  height: 20px;
+  transform: translateY(-50%);
+}
+hr::before {
+  left: 1%;
+}
+hr::after {
+  right: 1%;
+}

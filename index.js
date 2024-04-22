@@ -73,13 +73,22 @@ app.get("/favicon.ico", function(req, res) {
 
 
 app.get("/produse", function(req, res){
-    client.query("select * from componente", function(err, rez){
-        if(err){
-            console(err);
-            afisareEroare(res, 2);
-        }else{
-            res.render('pagini/produse', {produse:rez.rows, optiuni:[]})
-        }
+    console.log(req.query)
+    var conditieQuery="";
+    if (req.query.tip){
+        conditieQuery=` where tipuri_produs='${req.query.tip}'`
+    }
+    client.query("select * from unnest(enum_range(null::categ_prajitura))", function(err, rezOptiuni){
+
+        client.query(`select * from componente ${conditieQuery}`, function(err, rez){
+            if (err){
+                console.log(err);
+                afisareEroare(res, 2);
+            }
+            else{
+                res.render("pagini/produse", {produse: rez.rows, optiuni:[]})
+            }
+        })
     });
 })
 

@@ -138,3 +138,48 @@ tr:nth-child(even) {
   font-weight: bold;
   line-height: 25px;
 }
+
+.container {
+  position: relative;
+  display: inline-block;
+  font-size: 50px; /* Am folosit aceeași dimensiune pentru coerență */
+  font-family: Arial, sans-serif;
+}
+
+.text, #text-reflectat {
+  color: #333;
+  position: relative;
+  z-index: 2;
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.reflection, #text-reflectat {
+  position: absolute;
+  bottom: -10px; /* Adjust as needed */
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 20px; /* Adjust as needed */
+  background-image: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.5) 100%);
+  background-size: 100% 20px; /* Adjust height */
+  background-position: 0 -10px; /* Adjust to half of height */
+  animation: wave 2s infinite linear;
+  transform: scaleY(0.5); /* Adjust reflection height */
+}
+
+#text-reflectat {
+  transform-origin: 0 0;
+  transform: rotateX(180deg) skew(-45deg) scaleY(0.5) translate(10px, -25px);
+  opacity: 0.55;
+}
+
+@keyframes wave {
+  0% {
+    background-position: 0 -10px; /* Adjust to half of height */
+  }
+  100% {
+    background-position: 0 10px; /* Adjust to half of height */
+  }
+}

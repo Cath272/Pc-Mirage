@@ -32,9 +32,7 @@ main{
 .grid-produse .produs figure{
     text-align: center;
 }
-.grid-produse .produs figure img{
-    border:1px solid grey
-}
+
 .grid-produse .produs .info-prod{
     display:flex;
     background-color: var(--cl-marcare);

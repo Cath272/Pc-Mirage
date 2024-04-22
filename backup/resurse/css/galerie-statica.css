@@ -30,6 +30,11 @@
 }
 #grid-galerie img {
   width: 100%;
+  filter: sepia(100%);
+  transition: filter 0.8s;
+}
+#grid-galerie img:hover {
+  filter: sepia(0%);
 }
 #grid-galerie figcaption {
   text-align: center;

@@ -46,20 +46,20 @@ window.addEventListener("load",function() {
         let val_nume=document.getElementById("inp-nume").value.toLowerCase();
 
         let radiobuttons=document.getElementsByName("gr_rad");
-        let val_calorii;
+        let val_frecventa;
         for(let r of radiobuttons){
             if(r.checked){
-                val_calorii=r.value;
+                val_frecventa=r.value;
                 break;
             }
         }
 
-        var cal_a, cal_b;
-        if(val_calorii!="toate")
+        var frecv_min, frecv_max;
+        if(val_frecventa!="toate")
         {
-            [cal_a, cal_b]=val_calorii.split(":");
-            cal_a=parseInt(cal_a);
-            cal_b=parseInt(cal_b);
+            vfrecv=val_frecventa.split(":");
+            frecv_min=parseInt(cal_a);
+            frecv_max=parseInt(cal_b);
         }
 
         let val_pret=document.getElementById("inp-pret").value;
@@ -69,14 +69,15 @@ window.addEventListener("load",function() {
         var produse=document.getElementsByClassName("produs");
 
         for (let prod of produse){
+            
             prod.style.display="none";
             let nume=prod.getElementsByClassName("val-nume")[0].innerHTML.toLowerCase();
 
             let cond1= (nume.startsWith(val_nume));
 
-            let calorii=parseInt(prod.getElementsByClassName("val-calorii")[0].innerHTML);
+            let frecventa=parseInt(prod.getElementsByClassName("val_frecventa")[0].innerHTML);
 
-            let cond2= (val_calorii=="toate" || cal_a<=calorii && calorii <cal_b);
+            let cond2= (val_frecventa=="toate" || cal_a<=frecventa && frecventa <cal_b);
 
             let pret=parseFloat(prod.getElementsByClassName("val-pret")[0].innerHTML);
 

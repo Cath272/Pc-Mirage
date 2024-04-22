@@ -40,7 +40,14 @@
 
     img{
         width: 100%;
+        filter: sepia(100%);
+        transition: filter 0.8s;
+        &:hover{
+            filter: sepia(0%);
+        }
     }
+
+    
 
     figcaption{
         text-align: center;

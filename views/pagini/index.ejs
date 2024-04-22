@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
 
 <!--
     Comentariu
@@ -58,37 +57,30 @@
 
                 <section id="galerie-statica">
                     <h2>Galerie</h2>
-                        <div id="grid-galerie">
-                                <% 
-                                vZile=["luni", "marti", "miercuri", "joi", "vineri", "sambata", "duminica"];
-                                var d= new Date();
-                                var ziCurenta =d.getDay() - 1;
-                                console.log(ziCurenta);
-                                for(let imag of locals.imagini){
-                                    intervalStart =  vZile.indexOf(imag.intervale_zile[0][0]);
-                                    intervalEnd = vZile.indexOf(imag.intervale_zile[0][1]);
-
-                                    intervalStartWeekend =  vZile.indexOf(imag.intervale_zile[1][0]);
-                                    
-                                    intervalEndWeekend = vZile.indexOf(imag.intervale_zile[1][1]);
-                                    
-
-                                    if((ziCurenta >= intervalStart && ziCurenta <= intervalEnd) || (ziCurenta >= intervalStartWeekend && ziCurenta <= intervalEndWeekend) ){
-                                        
-                                     %>  
-                                        <figure>
-                                            <picture>
-                                                <source srcset="<%= imag.fisier_mic %>" media="(max-width:700px)"/>
-                                                <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
-                                                <img src="<%= imag.fisier %>" alt="briose">
-                                            </picture>
-                                            <figcaption><%= imag.descriere_poza%></figcaption>
-                                        </figure>
-                                        <% } %>
+                    <div id="grid-galerie">
+                        <% vZile=["luni", "marti" , "miercuri" , "joi" , "vineri" , "sambata" , "duminica" ]; var d=new
+                            Date(); var ziCurenta=d.getDay() - 1; console.log(ziCurenta); for(let imag of
+                            locals.imagini){ intervalStart=vZile.indexOf(imag.intervale_zile[0][0]);
+                            intervalEnd=vZile.indexOf(imag.intervale_zile[0][1]);
+                            intervalStartWeekend=vZile.indexOf(imag.intervale_zile[1][0]);
+                            intervalEndWeekend=vZile.indexOf(imag.intervale_zile[1][1]); if((ziCurenta>= intervalStart
+                            && ziCurenta <= intervalEnd) || (ziCurenta>= intervalStartWeekend && ziCurenta <=
+                                    intervalEndWeekend) ){ %>
+                                    <figure>
+                                        <picture>
+                                            <source srcset="<%= imag.fisier_mic %>" media="(max-width:700px)" />
+                                            <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)" />
+                                            <img src="<%= imag.fisier %>" alt="briose">
+                                        </picture>
+                                        <figcaption>
+                                            <%= imag.descriere_poza%>
+                                        </figcaption>
+                                    </figure>
                                     <% } %>
+                                        <% } %>
 
-                            
-                        </div>
+
+                    </div>
                 </section>
 
                 <section id="orar">
@@ -165,10 +157,12 @@
                         </mrow>
                     </math>
 
+
                     <section id="Monitoare">
                         <h3>Super promotie la monitoare</h3>
                         <p>Monitoare pentru toate nevoile, de <i>gaming</i>, office sau chiar
-                            <strong>profesionale</strong> la preturi foarte bune.</p>
+                            <strong>profesionale</strong> la preturi foarte bune.
+                        </p>
 
                     </section>
 
@@ -246,8 +240,17 @@
             <p id="watermark"></p>
         </main>
 
+        <hr>
+        <div class="container">
+            <div class="text">Text cu reflexie</div>
+            <div class="reflection"></div>
+            <div id="text-reflectat">Text cu reflexie</div>
+        </div>
+
         <%- include("../fragmente/footer.ejs") %>
 
 </body>
+
+
 
 </html>

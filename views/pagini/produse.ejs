@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html  lang="ro">
     <head>
-        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="description" content="Pc Mirage- Produse">
         <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
         <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
-        <title>Cofetăria Dulcelind - home</title>
+        <title>Pc Mirage- Produse</title>
         <%- include("../fragmente/head") %>     
         <script type="text/javascript" src=/resurse/js/produse.js></script>
 
@@ -15,15 +15,15 @@
     <main>
         <label> Nume: <input type="text" id="inp-nume"></label>
         <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
-        <div> Calorii:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
-            <p><label>Dietetic (calorii &lt; 350)
-                <input id="i_rad1"  name="gr_rad" value="0:350" type="radio"/>
+        <div> Frecventa:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <p><label>Slab (Frecventa &lt; 2500)
+                <input id="i_rad1"  name="gr_rad" value="0:2500" type="radio"/>
             </label></p>
-            <p><label>Mediu (350 &le; calorii &lt; 700)
-                <input id="i_rad2"  name="gr_rad" value="350:750" type="radio"/>
+            <p><label>Mediu (2500 &le; Frecventa &lt; 4000)
+                <input id="i_rad2"  name="gr_rad" value="2500:4000" type="radio"/>
             </label>
-            <p><label>Ridicat caloric (700 &le; calorii)
-                <input id="i_rad3" name="gr_rad" value="700:1000000000" type="radio"/>
+            <p><label>Frecventa Mare(4000 &le; Frecventa)
+                <input id="i_rad3" name="gr_rad" value="4000:1000000000" type="radio"/>
             </label>
             <p><label>Toate
                 <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
@@ -58,10 +58,10 @@
                         <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
                         <div class="info-prod">
                             <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
-                            <p class="calorii">Calorii: <span class="val-calorii"><%- prod.calorii%></span></p>
-                            <p class="gramaj">Gramaj: <span class="val-gramaj"><%- prod.gramaj%></span></p>
+                            <p class="socket">Compatibilitate <span class="val-comp"><%- prod.compatibilitate%></span></p>
+                            <p class="frecventa">Frecventa: <span class="val-frecventa"><%- prod.frecventa%></span> Mhz</p>
                         </div>
-                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
+                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.tipuri_produs%></span> </p>
                         <figure>
                             <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
                         </figure>
