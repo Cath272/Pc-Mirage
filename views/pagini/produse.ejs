@@ -13,41 +13,110 @@
     <%- include("../fragmente/header") %>
 
     <main>
-        <label> Nume: <input type="text" id="inp-nume"></label>
-        <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
-        <div> Frecventa:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
-            <p><label>Slab (Frecventa &lt; 2500)
-                <input id="i_rad1"  name="gr_rad" value="0:2500" type="radio"/>
-            </label></p>
-            <p><label>Mediu (2500 &le; Frecventa &lt; 4000)
-                <input id="i_rad2"  name="gr_rad" value="2500:4000" type="radio"/>
-            </label>
-            <p><label>Frecventa Mare(4000 &le; Frecventa)
-                <input id="i_rad3" name="gr_rad" value="4000:1000000000" type="radio"/>
-            </label>
-            <p><label>Toate
-                <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
-            </label>
-        </div>
 
+        <datalist id="datalist-memorie" class="dropdown-menu">
+            <option class="dropdown-item" value="toate"></option>
+            <% for (let opt of locals.memorie) { %>
+                <option class="dropdown-item" value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+            <% } %>
+        </datalist>
 
-        <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="70"> <span id="infoRange">(0)</span></label>
-        <label>Select simplu:
-            <select id="inp-categorie">
-                <option id="sel-toate" selected value="toate">toate</option>
-                <% for (let opt of locals.optiuni) { %>
-                    <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
-                <% } %>
-            </select>
-        </label>
-        <p>
-        <button id="filtrare">Filtreaza</button> 
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <label class="input-group-text"> Nume: <input type="text" id="inp-nume"></label>
+              </div>
+              <div class="col">
+                <label class="form-label"> Pret minim: <input class="form-range" type="range" id="inp-pret" value="0" min="0"  max="4000"> <span id="infoRange">(0)</span></label>
+              </div>
+              <div class="col">
+                Tip Memorie:
+                <input  class="input-group-text" list="datalist-memorie" id="datalist-memorie-choice" name="datalist-memorie-choice" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div "form-check"> Frecventa:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+                    <p><label>Slab (Frecventa &lt; 2500)
+                        <input class="form-check-input" id="i_rad1"  name="gr_rad" value="0:2500" type="radio"/>
+                    </label></p>
+                    <p><label>Mediu (2500 &le; Frecventa &lt; 4000)
+                        <input class="form-check-input" id="i_rad2"  name="gr_rad" value="2500:4000" type="radio"/>
+                    </label>
+                    <p><label>Frecventa Mare(4000 &le; Frecventa)
+                        <input class="form-check-input" id="i_rad3" name="gr_rad" value="4000:1000000000" type="radio"/>
+                    </label>
+                    <p><label>Toate
+                        <input class="form-check-input" id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
+                    </label>
+                </div>
+              </div>
+              <div class="col">
+                <div> 
+                    Promotie:
+                    <p><label>Da
+                        <input id="b_rad1"  class="form-check-input" name="bool_rad" value="true" type="radio"/>
+                    </label></p>
+            
+                    <p><label>Nu
+                        <input id="b_rad2"  class="form-check-input" name="bool_rad" value="false" type="radio"/>
+                    </label></p>
+            
+                    <p><label>Toate
+                        <input id="b_rad3" class="form-check-input" checked name="bool_rad" value="toate" type="radio"/>
+                    </label></p>
+                </div>
+              </div>
+              <div class="col">
+                
+                <div class="form-floating">
+                    <textarea class="form-control" rows="4" cols="50"  placeholder="Leave a comment here" id="inp-descriere"></textarea>
+                    <label for="floatingTextarea">Descriere</label>
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="col-prod" ty>
+                        <label for="inp-data">Producatorul:</label>
+                        <select id="inp-data" multiple class="form-select">
+                            <option value="1" selected>AMD</option>
+                            <option value="2" selected>Intel</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Categorie:
+                        <select id="inp-categorie" class="form-select">
+                            <option id="sel-toate" selected value="toate">toate</option>
+                            <% for (let opt of locals.optiuni) { %>
+                                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                            <% } %>
+                        </select>
+                    </label>
+                </div>
+                <div class="col">
+                    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary" id="filtrare">Filtreaza</button> 
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" id="resetare">Reseteaza</button><br/>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" id="sortCrescNume">Sorteaza crescator dupa pret si nume</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" id="sortDescrescNume">Sorteaza descrescator dupa pret si nume</button>
+                  </div>
+              </div>
+              
+          </div>
 
-        <button id="resetare">Reseteaza</button><br/>
-        <button id="sortCrescNume">Sorteaza crescator dupa pret si nume</button>
-        <button id="sortDescrescNume">Sorteaza descrescator dupa pret si nume</button>
         
-        </p>
         
         <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
         <section id="produse">
@@ -56,15 +125,24 @@
                 <% for( let prod of locals.produse) { %>
                     <article class="produs" >
                         <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
-                        <div class="info-prod">
-                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
-                            <p class="socket">Compatibilitate <span class="val-comp"><%- prod.compatibilitate%></span></p>
-                            <p class="frecventa">Frecventa: <span class="val-frecventa"><%- prod.frecventa%></span> Mhz</p>
-                        </div>
-                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.tipuri_produs%></span> </p>
-                        <figure>
-                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
-                        </figure>
+                        
+                            <div class="info-prod">
+                                <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                                <p class="socket">Compatibilitate <span class="val-comp"><%- prod.compatibilitate%></span></p>
+                                <p class="frecventa">Frecventa: <span class="val-frecventa"><%- prod.frecventa%></span> Mhz</p>
+                                <p class="categorie">Categorie:<span class="val-categorie"><%- prod.tipuri_produs%></span> </p>
+                                <p class="Promotie">Promotie:<span class="val-promotie"><%- prod.promotie%></span></p>
+                                <p>Tip memorie: <span class="tipuri_memorie"><%- prod.tipuri_memorie %> </span></p>
+                                <p class="descriere">Descriere:<span class="val-descriere"><%- prod.descriere%></span></p>
+                            </div>
+                            
+                            <figure class="figure-prod">
+                                <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                            </figure>
+
+                            
+                        
+                        
                         <label class="selecteaza-cos">
                             Selectează:<br/>
                             <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">

@@ -10,7 +10,7 @@ body {
 
 p {
     background-color: var(--culoare-primary);
-    color: white;
+    color: black;
 
 }
 
@@ -163,7 +163,7 @@ tr:nth-child(even) {
     line-height: 25px;
 }
 
-.container {
+.containertext {
     position: relative;
     display: inline-block;
     font-size: 50px; /* Am folosit aceeași dimensiune pentru coerență */

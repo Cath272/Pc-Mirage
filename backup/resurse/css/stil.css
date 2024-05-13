@@ -5,7 +5,7 @@ body {
 
 p {
   background-color: var(--culoare-primary);
-  color: white;
+  color: black;
 }
 
 h1 {
@@ -139,7 +139,7 @@ tr:nth-child(even) {
   line-height: 25px;
 }
 
-.container {
+.containertext {
   position: relative;
   display: inline-block;
   font-size: 50px; /* Am folosit aceeași dimensiune pentru coerență */
