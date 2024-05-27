@@ -5,9 +5,10 @@
                 <input class="form-check-input" type="checkbox" role="switch"  id="schimba_tema" >
                 <label class="form-check-label" for="flexSwitchCheckDefault">Schimba Tema</label>
               </div>
-            
+            <%- include("formular-login.ejs")%>
             <p id="banner_proiect"></p>
             <nav>
+
             
                 <label id="hamburger" for="ch-menu">
                     <img src="/resurse/imagini/Hamburger_icon_alb.png" alt="menu">
@@ -40,12 +41,16 @@
                         <ul>
                             <li><a href="/produse#">Toate</a></li>
                             <li><a href="/produse?tip=Procesor">Procesoare</a></li>
-                            <li><a href="/produse?tip=placi_video">Placi Video</a></li>
-                            <li><a href="/produse?tip=placi_de_baza">Placi de Baza</a></li>
+                            <li><a href="/produse?tip=Placa Video">Placi Video</a></li>
+                            <li><a href="/produse?tip=Placa de Baza">Placi de Baza</a></li>
                         </ul>
                     
                     </li>
+                    <li><a href="/cos-virtual" >Cos</a></li>
                     <li><a href="#" >Contact</a></li>
+                    <%- include("submeniu-administrare.ejs")%>
+                    <%- include("submeniu-utilizator-logat.ejs")%>
+
                 </ul>
             </nav>
         </header>

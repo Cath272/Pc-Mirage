@@ -9,7 +9,7 @@ body {
 
 
 p {
-    background-color: var(--culoare-primary);
+    
     color: black;
 
 }
@@ -212,4 +212,37 @@ tr:nth-child(even) {
       background-position: 0 10px; /* Adjust to half of height */
     }
   }
+
+  #banner {
+    position: fixed;
+    border-radius: 25px;
+    bottom: 1rem;
+    left: 1rem;
+    width: 25vw; /* One quarter of the viewport width */
+    height: 10vw; /* Square shape */
+    background-color: rgba(0, 0, 0, 0.75); /* Initial background color with 75% opacity */
+    color: white;
+    font-size: 1.5vw; /* Font size relative to viewport width */
+    padding: 1vw;
+    display: none; /* Initially hidden */
+    animation: showBanner 5s forwards; /* Animation to show the banner */
+    text-align: center;
+    line-height: 0.6;
+}
+
+@keyframes showBanner {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#ok_cookies {
+    margin-top: 1vw;
+}
+
   

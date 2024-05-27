@@ -75,6 +75,7 @@ window.addEventListener("load",function() {
         let val_pret=document.getElementById("inp-pret").value;
 
         let val_categ=document.getElementById("inp-categorie").value;
+        console.log(val_categ)
 
         var produse=document.getElementsByClassName("produs");
         var inpDescriere = document.getElementById("inp-descriere").value.trim();
@@ -125,6 +126,7 @@ window.addEventListener("load",function() {
 
             let categorie=prod.getElementsByClassName("val-categorie")[0].innerHTML;
             let cond4= ( val_categ=="toate" ||  val_categ==categorie)
+            console.log(categorie)
             let promotie = prod.getElementsByClassName("val-promotie")[0].innerHTML.toLowerCase().trim();
             let cond5 = (val_promotie == "toate" || promotie.toString() === val_promotie);
 
@@ -183,6 +185,14 @@ window.addEventListener("load",function() {
     document.getElementById("sortDescrescNume").onclick=function(){
         sortare(-1);
     }
+
+    const gridItems = document.querySelectorAll('.grid-produse .card');
+    gridItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('visible');
+        }, index * 300); // Adjust the delay as needed
+    });
+    
 
 
     window.onkeydown= function(e){
